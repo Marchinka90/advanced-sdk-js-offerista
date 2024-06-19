@@ -10,13 +10,13 @@ Use the package manager npm to install all dependencies.
 npm install
 ```
 
-Set up the SDK class
+Set up the AdvancedSDK class
 
 ```bash
 import { AdvancedSDK } from '../src/index.js';
 
-// Initialize the SDK with your credentials and API base URL
-const sdk = new MySDK('your_email@example.com', 'your_password', 'https://api.my-sdk.com');
+// Initialize the AdvancedSDK with your credentials and API base URL
+const sdk = new AdvancedSDK('your_email@example.com', 'your_password', 'https://api.my-sdk.com');
 ```
 
 
