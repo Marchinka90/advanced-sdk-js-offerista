@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced SDK for API Example</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Advanced SDK for API Application</h1>
+    </header>
+    <main>
+        <section id="authSection" class="section">
+            <h2>Authentication</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="baseUrl">Base URL</label>
+                    <input type="text" id="baseUrl" name="baseUrl" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" id="authBtn">Authenticate</button>
+                <button type="button" id="refreshBtn" class="disabled" disabled>Refresh Token</button>
+            </form>
+            <pre id="authOutput" class="output"></pre>
+        </section>
+
+        <section id="crudSection" class="section">
+            <h2>CRUD Operations</h2>
+            <div class="form-group">
+                <label for="userId">User ID</label>
+                <input type="text" id="userId" name="userId">
+                <button type="button" id="getUserBtn" class="disabled" disabled>Get User By ID</button>
+            </div>
+            <div class="form-group">
+                <label for="newUser">New User Data</label>
+                <textarea id="newUser" name="newUser"
+                    placeholder='{"name": "newuser", "password": "newpass", "email": "email@yahoo.com", "phone": "08111111111"}'></textarea>
+                <button type="button" id="createUserBtn" class="disabled" disabled>Create User</button>
+            </div>
+            <div class="form-group">
+                <label for="updateUser">Update User Data</label>
+                <textarea id="updateUser" name="updateUser"
+                    placeholder='{"id": 1, "name": "newuser", "email": "email@yahoo.com", "phone": "08111111111"}'></textarea>
+                <button type="button" id="updateUserBtn" class="disabled" disabled>Update User</button>
+            </div>
+            <div class="form-group">
+                <label for="deleteUserId">User ID to Delete</label>
+                <input type="text" id="deleteUserId" name="deleteUserId">
+                <button type="button" id="deleteUserBtn" class="disabled" disabled>Delete User</button>
+            </div>
+            <pre id="crudOutput" class="output"></pre>
+        </section>
+
+        <section id="listUsersSection" class="section">
+            <h2>List Users</h2>
+            <div class="form-group">
+                <label for="pageInput">Page:</label>
+                <input type="number" id="pageInput" name="pageInput" min="0">
+            </div>
+            <div class="form-group">
+                <label for="limitInput">Limit:</label>
+                <input type="number" id="limitInput" name="limitInput" min="0" max="100">
+            </div>
+            <button type="button" id="getUsersBtn" class="disabled" disabled>Get List Users</button>
+            <pre id="getUsersOutput" class="output"></pre>
+        </section>
+
+        <section id="batchSection" class="section">
+            <h2>Batch Operations</h2>
+            <div class="form-group">
+                <label for="batchUserIds">User IDs (comma separated):</label>
+                <input type="text" id="batchUserIds" placeholder="Enter user IDs">
+                <button id="getUsersBatchBtn" class="disabled" disabled>Get Users Batch</button>
+                <button id="deleteUsersBatchBtn" class="disabled" disabled>Delete Users Batch</button>
+            </div>
+            <div class="form-group">
+                <label for="batchUpdateUsersData">Users Update (Array with JSON data):</label>
+                <textarea id="batchUpdateUsersData" placeholder='[{"name": "somename", "email": "email@yahoo.com", "phone": "08111111111"}]'></textarea>
+                <button id="updateUsersBatchBtn" class="disabled" disabled>Update Users Batch</button>
+            </div>
+            <pre id="batchOutput" class="output"></pre>
+        </section>
+
+    </main>
+    <footer>
+        <p>© 2024 Advanced SDK for API Example. All rights reserved.</p>
+    </footer>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
